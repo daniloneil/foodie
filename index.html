@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Foodie</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="normilize.css">
+
+</head>
+
+<body>
+    <div class="page themeLight">
+        <div id="load" class="preloader">
+            <div class="loader">
+                <div class="container">
+                    <div class="rotateCenter">
+                        <img src="assets/icons/logoLoader.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="scrollTop" onclick="scrollToTop()"></div>
+        
+        <section class="hero">
+            <div class="container">
+                <div class="hero__item">
+                    <div class="logo">
+                        <img src="assets/icons/logo.svg" alt="logo">
+                    </div>
+                    <nav class="nav">
+                        <div class="navInner">
+                            <a href="#">Меню</a>
+                            <a href="#">Заказы</a>
+                            <a href="#">Услуги</a>
+                            <a href="#">Продукты</a>
+                        </div>
+                        <input type="checkbox" name="themeSwitcher" id="switch">
+                    </nav>
+                    <h2 class="heroTitle">Вкусности</h2>
+                    <p class="heroText">
+                        Лучшие блюда от шеф-повара итальянской кухни сделают Ваш вечер поистине незабываемым.
+                    </p>
+                    <button class="heroBtn">выбрать сейчас</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="popular">
+            <div class="container">
+                <div class="popular__item">
+                    <h3 class="titleSec">Популярные</h3>
+                    <p class="descSec">Самые изысканные блюда на каждый день.</p>
+                    <div class="card">
+                        <div class="foodCard">
+                            <div class="imgCard">
+                                <img src="assets/img/pastaSpicy.png" alt="imgCard">
+                            </div>
+                            <div class="cardDesc">
+                                <h5 class="cardName">Spicy Pasta</h5>
+                                <p class="cardText">Паста по итальянским рецептам</p>
+                            </div>
+                        </div>
+                        <div class="foodCard">
+                            <div class="imgCard">
+                                <img src="assets/img/pastaVeg.png" alt="imgCard">
+                            </div>
+                            <div class="cardDesc">
+                                <h5 class="cardName">Vegetable Pasta</h5>
+                                <p class="cardText">Паста по итальянским рецептам</p>
+                            </div>
+                        </div>
+                        <div class="foodCard">
+                            <div class="imgCard">
+                                <img src="assets/img/pastaBeef.png" alt="imgCard">
+                            </div>
+                            <div class="cardDesc">
+                                <h5 class="cardName">Beef Pasta</h5>
+                                <p class="cardText">Паста по итальянским рецептам</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="statistic">
+            <div class="container">
+                <div class="statistic__item">
+                    <h3 class="titleSec">Наша статистика</h3>
+                    <p class="descSec">Наши блюда в цифрах.</p>
+                    <div class="statBlock">
+                        <div class="statItem">
+                            <div class="statNum">35</div>
+                            <div class="statText">позиции в меню</div>
+                        </div>
+                        <div class="statItem">
+                            <div class="statNum">3.4</div>
+                            <div class="statText">тысячи продаж</div>
+                        </div>
+                        <div class="statItem">
+                            <div class="statNum">32</div>
+                            <div class="statText">города</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="ourMenu">
+            <div class="container">
+                <div class="ourMenu__item">
+                    <h3 class="titleSec">Наше меню</h3>
+                    <p class="descSec">Наше меню порадует самого изысканного гурмана.</p>
+                    <div class="menuInner">
+                        <div class="menuCard">
+                            <div class="menuImg">
+                                <img src="assets/icons/pasta.png" alt="pasta">
+                            </div>
+                            <div class="menuDesc">
+                                <div class="menuTitle">Паста Болоньезе</div>
+                                <div class="menuText">Основой этого блюда является соус Болоньезе — густой
+                                    томатно-мясной соус с овощами, который, в классическом варианте, подаётся с пастой
+                                    тальятелле — это широкая итальянская лапша.</div>
+                            </div>
+                        </div>
+                        <div class="menuCard">
+                            <div class="menuImg">
+                                <img src="assets/icons//Mie Ayam.png" alt="Mie Ayam">
+                            </div>
+                            <div class="menuDesc">
+                                <div class="menuTitle">Ми айам</div>
+                                <div class="menuText">Это индонезийское блюдо из закаленной желтой пшеничной лапши с
+                                    кубиками куриного мяса.</div>
+                            </div>
+                        </div>
+                        <div class="menuCard">
+                            <div class="menuImg">
+                                <img src="assets/icons/Carbonara.png" alt="Carbonara">
+                            </div>
+                            <div class="menuDesc">
+                                <div class="menuTitle">Карбонара</div>
+                                <div class="menuText">Спагетти с мелкими кусочками бекона, смешанные с соусом из яиц,
+                                    сыра
+                                    пармезан и пекорино романо, соли и свежемолотого чёрного перца. </div>
+                            </div>
+                        </div>
+                        <div class="menuCard">
+                            <div class="menuImg">
+                                <img src="assets/icons/Pecel Lele.png" alt="Lele">
+                            </div>
+                            <div class="menuDesc">
+                                <div class="menuTitle">Песель Леле</div>
+                                <div class="menuText">Индонезийское жареное блюдо из сома Clarias, происходящее из
+                                    Ламонган,
+                                    Восточная Ява, Индонезия.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="offer">
+            <div class="offer__item">
+                <div class="offerImg">
+                </div>
+                <div class="offerText">
+                    <h3 class="titleSec">Вкусность дня</h3>
+                    <p class="descSec">Аромат специй вскружит Вам голову, а паста при одном лишь упоминании навеет
+                        воспоминания об Италии.</p>
+                    <button class="btnOffer">Заказать сейчас</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="packageMenu">
+            <div class="container">
+                <div class="packageMenu__item">
+                    <h3 class="titleSec">Комплексные блюда</h3>
+                    <p class="descSec">Закажите комплексные блюда и сэкономьте до 50% от общей стоимости.</p>
+                    <div class="packageMenuCard">
+                        <div class="menuCard">
+                            <div class="menuImg">
+                                <img src="assets/icons/pasta.png" alt="Pasta">
+                            </div>
+                            <div class="menuTitle">Паста + Свежий чай</div>
+                            <div class="menuText">Отличное сочетание для нового дня.</div>
+                            <button class="menuBtn">500 рублей</button>
+                        </div>
+                        <div class="menuCard">
+                            <div class="menuImg">
+                                <img src="assets/icons/Carbonara.png" alt="Pasta">
+                            </div>
+                            <div class="menuTitle">Паста + Карбонара</div>
+                            <div class="menuText">Отличное сочетание для нового дня.</div>
+                            <button class="menuBtn">600 рублей</button>
+                        </div>
+                        <div class="menuCard">
+                            <div class="menuImg">
+                                <img src="assets/icons/Mie Ayam.png" alt="Pasta">
+                            </div>
+                            <div class="menuTitle">Ми айам + Песель Леле</div>
+                            <div class="menuText">Отличное сочетание для нового дня.</div>
+                            <button class="menuBtn">700 рублей</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="chef">
+            <div class="container">
+                <div class="chef__item">
+                    <div class="imgChef">
+                        <img src="assets/img/cooker.png" alt="">
+                    </div>
+                    <h3 class="titleSec">Шеф-повар Мила</h3>
+                    <p class="descSec">Я шэф-повар Мила всегда мила и готова порадовать Вас эксклюзивными блюдами.</p>
+                </div>
+            </div>
+        </section>
+
+        <footer class="footer">
+            <div class="subscribe">
+                <div class="container">
+                    <div class="subscribeInner">
+                        <h3 class="titleSec">Подпишись</h3>
+                        <p class="descSec">Получай самые популярные рецепты и приглашения на мои фуд ивенты.</p>
+                    </div>
+                    <div class="formEmail">
+                        <input class="email" type="email" name="email" id="email" placeholder="Введите Ваш email">
+                        <input class="btnSub" type="submit" value="Подписаться">
+                    </div>
+                </div>
+            </div>
+            <div class="aboutFooter">
+                <div class="container">
+                    <div class="footerItem">
+                        <div class="aboutUs">
+                            <h5>О нас</h5>
+                            <p>
+                                Готовые блюда на заказ с доставкой на дом. Возможность создания меню исходя из
+                                концепции мероприятия с привлечением бренд-шефа. Обладание рядом премий и наград в
+                                индустрии обслуживания.
+                            </p>
+                        </div>
+                        <div class="about">
+                            <h5>История</h5>
+                            <div class="link">
+                                <a href="#">История создания</a>
+                                <a href="#">Наша команда</a>
+                                <a href="#">Бренд</a>
+                                <a href="#">Соглашения и правила</a>
+                                <a href="#">Политика конфиденциальности</a>
+                            </div>
+                        </div>
+                        <div class="services">
+                            <h5>Сервис</h5>
+                            <div class="link">
+                                <a href="#">Как заказать</a>
+                                <a href="#">Наши продукты</a>
+                                <a href="#">Cтатус заказа</a>
+                                <a href="#">Промо</a>
+                                <a href="#">Способы оплаты</a>
+                            </div>
+                        </div>
+                        <div class="follow">
+                            <h5>Подпишись</h5>
+                            <div class="link">
+                                <a class="socialLink" href="#">
+                                    <svg>
+                                        <use xlink:href='sprite.svg#youtube'></use>
+                                    </svg>
+                                    <div class="nameSocial">
+                                        Youtube
+                                    </div>
+                                </a>
+                                <a class="socialLink" href="#">
+                                    <svg>
+                                        <use xlink:href='sprite.svg#twitter'></use>
+                                    </svg>
+                                    <div class="nameSocial">
+                                        Twitter
+                                    </div>
+                                </a>
+                                <a class="socialLink" href="#">
+                                    <svg>
+                                        <use xlink:href='sprite.svg#instagram'></use>
+                                    </svg>
+                                    <div class="nameSocial">
+                                        Instagram
+                                    </div>
+                                </a>
+                                <a class="socialLink" href="#">
+                                    <svg>
+                                        <use xlink:href='sprite.svg#whatsapp'></use>
+                                    </svg>
+                                    <div class="nameSocial">
+                                        Whatsapp
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="assets/js/preloader.js"></script>
+    <script src="assets/js/themeSwitcher.js"></script>
+    <script src="assets/js/scrollTop.js"></script>
+</body>
+
+</html>

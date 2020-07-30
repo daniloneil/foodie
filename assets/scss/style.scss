@@ -1,0 +1,1462 @@
+@import url(/normilize.css);
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&display=swap');
+
+// var
+:root {
+    --fillShape: linear-gradient(to right, #ED213A, #af3426);
+    --fillBg: #f03c45;
+    --textTitle: 'Pacifico', cursive;
+    --textRegular: 'Amatic SC', cursive;
+    --fillParag: rgb(46, 45, 45);
+    --fillBgMenu: #eee6cc;
+    --fillCard: #faf5e4;
+    --fillFooter: #2a2a2a;
+}
+
+//  theme {
+.themeLight {
+    .hero::after {
+        background: var(--fillShape);
+    }
+}
+
+.themeDark {
+    .hero::after {
+        background: #000;
+    }
+
+    .statistic::after {
+        background: #000;
+    }
+
+    .offer .offer__item .offerImg:after {
+        background: #000;
+    }
+
+    h3,
+    .menuTitle {
+        color: #000;
+    }
+}
+
+//  themeSwitcher
+#switch {
+    position: relative;
+    width: 80px;
+    height: 40px;
+    appearance: none;
+    background: #fff;
+    outline: none;
+    border-radius: 20px;
+    border: none;
+    outline: none;
+    transition: .5s;
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, .2);
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.767);
+
+
+    &:checked {
+        background: #2a2a2a;
+
+        &::before {
+            left: 40px;
+        }
+    }
+
+    // button   
+    &::before {
+        content: '';
+        position: absolute;
+        width: 40px;
+        height: 40px;
+        border-radius: 20px;
+        top: 0;
+        left: 0;
+        background: var(--fillBg);
+        transition: .5s;
+        transform: scale(1.1);
+        box-shadow: 0 0 5px rgba(255, 255, 255, 0.767);
+    }
+}
+
+// preloader
+.preloader {
+    position: fixed;
+    z-index: 999999;
+    background: var(--fillShape);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    visibility: visible;
+    transition: 1s all;
+    opacity: 1;
+
+    .loader {
+        text-align: center;
+        display: block;
+        width: 100%;
+        margin: 0 auto;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-right: -50%;
+        transform: translate(-50%, -50%)
+    }
+
+    &.success {
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
+
+
+.rotateCenter {
+    -webkit-animation: rotateCenter 1.6s ease-out 1s infinite both;
+    animation: rotateCenter 1.6s ease-out 1s infinite both;
+}
+
+@-webkit-keyframes rotateCenter {
+    0% {
+        -webkit-transform: rotate(0);
+        transform: rotate(0);
+    }
+
+    100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes rotateCenter {
+    0% {
+        -webkit-transform: rotate(0);
+        transform: rotate(0);
+    }
+
+    100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+// scroll
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--fillCard);
+
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--fillBg);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #ee2c36;
+}
+
+* {
+    -webkit-font-smoothing: antialiased;
+    outline: none;
+}
+
+.page {
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.hero {
+    width: 100%;
+    height: 100vh;
+    background: url(../../assets/img/bg.png) no-repeat center / cover;
+    position: relative;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+
+    &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background: var(--fillBg);
+        opacity: 0.8;
+        z-index: 2;
+    }
+
+    .heroTitle {
+        font-family: var(--textTitle);
+        color: #fff;
+        font-size: 15em;
+        font-weight: 400;
+        margin: 50px 0px 50px;
+        position: relative;
+
+        &::before {
+            content: "Delicious";
+            position: absolute;
+            top: -80px;
+            left: -100px;
+            font-size: 1.5em;
+            opacity: 0.1;
+            z-index: -1;
+        }
+    }
+}
+
+// scrollTop
+.scrollTop {
+    border-radius: 8px;
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    width: 40px;
+    height: 40px;
+    background: url(../../assets/icons/upАrrow.png) no-repeat center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .2);
+    cursor: pointer;
+    z-index: 9999999;
+    visibility: hidden;
+    opacity: 0;
+    transition: all .5s;
+
+    &.activeScroll {
+        visibility: visible;
+        opacity: 1;
+    }
+
+    &:hover {
+        background-color: var(--fillBg);
+    }
+}
+
+
+
+
+.container {
+    padding: 10% 0px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.hero__item {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 3;
+}
+
+.logo {
+    margin: 50px 0px;
+}
+
+nav {
+    list-style: none;
+    display: flex;
+    font-size: 3em;
+    z-index: 10;
+    align-items: center;
+
+    &:last-child {
+        margin-right: 0px;
+    }
+
+    a {
+        padding: 7px 20px;
+        margin-right: 50px;
+        text-decoration: none;
+        color: #fff;
+        font-family: var(--textRegular);
+        border-radius: 25px;
+        transition: all .3s;
+
+        &:hover {
+            background: #fff;
+            color: var(--fillBg);
+            padding: 7px 20px;
+        }
+
+        &:active {
+            background: var(--fillBg);
+            color: #fff;
+        }
+
+    }
+
+
+}
+
+
+
+.heroText {
+    font-family: var(--textRegular);
+    color: #fff;
+    width: 70%;
+    font-size: 1.5em;
+    text-align: center;
+    letter-spacing: 3px;
+}
+
+@mixin btn {
+    font-family: var(--textRegular);
+    border-radius: 35px;
+    border: none;
+    background: #fff;
+    padding: 20px 50px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: var(--fillBg);
+    font-size: 1.5em;
+    font-weight: 900;
+    cursor: pointer;
+    margin-top: 50px;
+}
+
+button,
+.heroBtn {
+    @include btn;
+    transition: .3s;
+
+    &:active {
+        background: var(--fillBg);
+        color: #fff;
+    }
+}
+
+.popular {
+    background: url(../../assets/img/bgPopular.png) no-repeat center / cover;
+    width: 100vw;
+    height: 100vh;
+}
+
+.popular__item {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+h3 {
+    font-family: var(--textTitle);
+    color: var(--fillBg);
+    font-size: 5em;
+    margin: 0;
+    margin-bottom: 10px;
+    position: relative;
+    text-align: center;
+
+    &::before {
+        content: 'Popular';
+        position: absolute;
+        top: -55px;
+        left: -50px;
+        font-size: 2em;
+        opacity: 0.1;
+        z-index: -1;
+    }
+}
+
+.descSec {
+    width: 70%;
+    font-family: var(--textRegular);
+    font-size: 3em;
+    color: var(--fillParag);
+    text-align: center;
+    margin: 20px;
+    padding: 20px 0px;
+}
+
+.card {
+    width: 100%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+    align-items: center;
+
+    .foodCard {
+        text-align: center;
+        width: 30%;
+
+        .cardDesc {
+            font-size: 3em;
+
+            .cardName {
+                font-family: var(--textTitle);
+                color: var(--fillBg);
+                font-size: 1.2em;
+                margin: 10px 0px;
+            }
+
+            .cardText {
+                font-size: 0.5em;
+                font-family: var(--textRegular);
+            }
+        }
+    }
+}
+
+.statistic {
+    background: url(../../assets/img/bgStat.png) no-repeat center / cover;
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+
+    &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background: var(--fillShape);
+        opacity: 0.8;
+        z-index: 0;
+    }
+
+    .container {
+        position: absolute;
+        z-index: 3;
+
+        .statistic__item {
+            display: flex;
+            flex-flow: column wrap;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+
+    h3,
+    p {
+        color: #fff;
+    }
+
+    h3 {
+        font-size: 5em;
+
+        &::before {
+            content: 'Statistic';
+            left: 25px;
+        }
+    }
+}
+
+.statBlock {
+    margin-top: 100px;
+    width: 100%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+    align-items: center;
+
+    .statItem {
+        color: #fff;
+        font-family: var(--textRegular);
+        width: 20em;
+        height: 20em;
+        border: 5px dashed #fff;
+        border-radius: 100%;
+        display: flex;
+        flex-flow: column wrap;
+        justify-content: center;
+        align-items: center;
+
+        .statNum {
+            font-size: 5em;
+        }
+
+        .statText {
+            font-size: 2em;
+        }
+    }
+}
+
+.ourMenu {
+    background: var(--fillBgMenu);
+    width: 100vw;
+    position: relative;
+
+    .ourMenu__item {
+        display: flex;
+        flex-flow: column wrap;
+        justify-content: center;
+        align-items: center;
+    }
+
+    h3 {
+        font-size: 5em;
+
+        &::before {
+            content: 'Menu';
+            left: 0px;
+            z-index: 0;
+        }
+    }
+}
+
+.menuInner {
+    width: 100%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+
+    .menuCard {
+        width: 45%;
+        display: flex;
+        flex-flow: row wrap;
+        margin-bottom: 20px;
+        padding-right: 20px;
+
+        .menuImg {
+            width: 30%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .menuDesc {
+            width: 70%;
+            display: flex;
+            flex-flow: column nowrap;
+
+            .menuTitle {
+                font-family: var(--textTitle);
+                color: var(--fillBg);
+                font-size: 2.5em;
+                margin-bottom: 20px;
+            }
+
+            .menuText {
+                font-family: var(--textRegular);
+                color: var(--fillParag);
+                font-size: 1.5em;
+            }
+        }
+
+    }
+}
+
+
+
+.offer {
+    background: var(--fillCard);
+    height: 100vh;
+
+    .offer__item {
+        width: 100%;
+        height: inherit;
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: center;
+        align-items: center;
+
+        .offerImg {
+            width: 50%;
+            height: inherit;
+            background: url(../../assets/img/bgOrder.png) no-repeat center / cover;
+            position: relative;
+
+            &::after {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100vh;
+                background: var(--fillShape);
+                opacity: 0.8;
+                // z-index: 2;
+            }
+
+        }
+
+        .offerText {
+            width: 50%;
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+
+            h3 {
+                font-size: 5em;
+
+                &::before {
+                    content: 'Delisious';
+                    left: -40px;
+                    z-index: 0;
+                }
+            }
+        }
+
+        .btnOffer {
+            @include btn;
+            color: #fff;
+            background-color: var(--fillBg);
+
+            &:active {
+                background: #fff;
+                color: var(--fillBg);
+            }
+        }
+    }
+
+}
+
+.packageMenu {
+    background: var(--fillBgMenu);
+
+    .packageMenu__item {
+        width: 100%;
+        display: flex;
+        flex-flow: column wrap;
+        justify-content: center;
+        align-items: center;
+
+        h3 {
+            font-size: 5em;
+
+            &::before {
+                content: 'Package';
+                left: 80px;
+                z-index: 0;
+            }
+        }
+    }
+}
+
+.packageMenuCard {
+    width: 90%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+    align-items: stretch;
+
+    .menuCard {
+        padding: 20px 10px;
+        display: flex;
+        flex-flow: column wrap;
+        align-items: center;
+        justify-content: flex-end;
+        width: 20%;
+        border-radius: 5%;
+        background: var(--fillCard);
+        transition: all .5s;
+
+        &:hover {
+
+            filter: blur(0px);
+            transform: scale(1.1);
+            opacity: 1;
+        }
+
+        .menuImg {
+            padding: 5em 0em;
+        }
+
+        .menuTitle {
+            font-family: var(--textTitle);
+            font-size: 1.7em;
+            color: var(--fillBg);
+            margin-bottom: 10px;
+        }
+
+        .menuText {
+            font-family: var(--textTitle);
+            font-size: 1.3em;
+            color: var(--fillParag);
+            padding: 0px 20px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .menuBtn {
+            color: #fff;
+            background-color: var(--fillBg);
+            margin: 0;
+
+            &:active {
+                background: #fff;
+                color: var(--fillBg);
+            }
+        }
+    }
+}
+
+.packageMenuCard:hover .menuCard {
+    filter: blur(20px);
+    transform: scale(0.9);
+    opacity: 0.5;
+    transition: 0.3s all;
+}
+
+.packageMenuCard .menuCard:hover {
+    filter: blur(0px);
+    transform: scale(1.1);
+    opacity: 1;
+}
+
+.chef {
+    background-color: #fff;
+    width: 100vw;
+    height: auto;
+    position: relative;
+    z-index: 5;
+
+    .chef__item {
+        display: flex;
+        flex-flow: column wrap;
+        justify-content: center;
+        align-items: center;
+
+        h3 {
+            font-size: 5em;
+
+            &::before {
+                content: "Chef";
+                left: 150px;
+                z-index: 0;
+            }
+        }
+
+        .imgChef {
+            margin-bottom: 50px;
+        }
+    }
+}
+
+.footer {
+    width: 100vw;
+
+    .subscribe {
+        background: var(--fillCard);
+    }
+}
+
+.subscribe {
+    .subscribeInner {
+        display: flex;
+        flex-flow: column wrap;
+        justify-content: center;
+        align-items: center;
+
+        h3 {
+            font-size: 5em;
+
+            &::before {
+                content: "Subscribe";
+                left: -125px;
+                z-index: 0;
+            }
+        }
+
+        .imgChef {
+            margin-bottom: 50px;
+        }
+    }
+}
+
+.formEmail {
+    text-align: center;
+
+    .email {
+        width: 30%;
+        height: 50px;
+        border-radius: 40px;
+        border: none;
+        font-family: var(--textRegular);
+        padding: 0px 30px;
+    }
+
+    .btnSub {
+        position: relative;
+        left: -3%;
+        width: 15%;
+        height: 50px;
+        border-radius: 40px;
+        border: none;
+        background: var(--fillBg);
+        color: #fff;
+        cursor: pointer;
+        font-family: var(--textRegular);
+        text-transform: uppercase;
+        letter-spacing: 3px;
+        font-weight: 900;
+        transition: 0.3s;
+
+        &:active {
+            background: #fff;
+            color: var(--fillBg);
+        }
+    }
+}
+
+footer {
+    margin-top: auto;
+}
+
+.aboutFooter {
+    width: 100%;
+    height: inherit;
+    background: var(--fillFooter);
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+
+    .footerItem {
+        margin: 0 auto;
+        width: 90%;
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: center;
+
+        h5 {
+            font-family: var(--textTitle);
+            font-size: 2em;
+            margin: 0;
+            margin: 15px 0px;
+        }
+
+        .aboutUs {
+            width: 30%;
+            color: #fff;
+
+            p {
+                width: 80%;
+                font-family: var(--textRegular);
+            }
+        }
+
+        .about {
+            width: 20%;
+            display: flex;
+            flex-flow: column nowrap;
+            color: #fff;
+
+        }
+
+        .link {
+            display: flex;
+            flex-flow: column nowrap;
+
+            a {
+                display: inline-block;
+                margin-bottom: 10px;
+                text-decoration: none;
+                color: #fff;
+                font-family: var(--textRegular);
+                width: inherit;
+
+                &:hover {
+                    opacity: 0.5;
+                }
+            }
+        }
+
+        .services {
+            width: 20%;
+            color: #fff;
+        }
+
+        .follow {
+            width: 20%;
+            color: #fff;
+
+            .socialLink {
+                width: 200px;
+                height: 20px;
+                display: flex;
+                flex-flow: row nowrap;
+                align-items: center;
+
+                svg {
+                    fill: #fff;
+                    width: 1.5em;
+                    margin-right: 5px;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 1650px) {
+    .packageMenuCard .menuCard .menuTitle {
+        font-size: 1.5em;
+    }
+
+    .packageMenuCard .menuCard .menuBtn {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 1440px) {
+    .descSec {
+        font-size: 2em;
+    }
+
+    .packageMenuCard .menuCard .menuTitle {
+        font-size: 1.3em;
+    }
+
+    .packageMenuCard .menuCard .menuImg {
+        padding: 3em 0em;
+    }
+
+    .packageMenuCard .menuCard .menuBtn {
+        font-size: 18px;
+    }
+
+    .footerItem {
+        font-size: 0.8em;
+    }
+}
+
+@media (max-width: 1360px) {
+
+    h3 {
+        font-size: 4em;
+    }
+
+    .offer .offer__item .offerText h3 {
+        font-size: 4em;
+    }
+
+    .packageMenu .packageMenu__item h3 {
+        font-size: 4em;
+    }
+
+    .descSec {
+        font-size: 1.3em;
+    }
+
+    .formEmail .btnSub {
+        width: 17%;
+        left: -4%;
+    }
+
+    .hero .heroTitle {
+        font-size: 10em;
+    }
+
+    .packageMenuCard .menuCard .menuTitle {
+        font-size: 1em;
+    }
+
+    .packageMenuCard .menuCard .menuText {
+        font-size: 1em;
+    }
+
+    .statBlock .statItem {
+        width: 15em;
+        height: 15em;
+    }
+
+    .statBlock .statItem .statText {
+        font-size: 1em;
+    }
+
+    .card .foodCard .cardDesc .cardName {
+        font-size: 1em;
+    }
+
+    .card .foodCard .cardDesc .cardText {
+        font-size: 0.4em;
+    }
+
+    .packageMenuCard .menuCard .menuBtn {
+        font-size: 10px;
+    }
+
+}
+
+@media (max-width: 1024px) {
+    nav {
+        font-size: 1em;
+    }
+
+    #switch {
+        width: 40px;
+        height: 20px;
+
+        &:checked::before {
+            left: 20px;
+        }
+
+        &::before {
+            width: 20px;
+            height: 20px;
+        }
+    }
+
+    .hero .heroTitle:before {
+        top: -60px;
+    }
+
+    .heroBtn,
+    button {
+        font-size: 1em;
+    }
+
+    .card .foodCard .cardDesc .cardName {
+        font-size: 0.7em;
+    }
+
+    .menuInner .menuCard .menuDesc .menuText {
+        font-size: 1.2em;
+    }
+
+    .offer .offer__item .btnOffer {
+        font-size: 1em;
+    }
+
+    .packageMenuCard .menuCard .menuBtn {
+        font-size: 8px;
+    }
+
+    .formEmail .btnSub {
+        letter-spacing: 0px;
+    }
+}
+
+@media (max-width: 768px) {
+    #switch::before {
+        transform: scale(1);
+    }
+    nav {
+        font-size: 0.8em;
+    }
+
+    .hero .heroTitle {
+        font-size: 7em;
+    }
+
+    .hero .heroTitle:before {
+        top: -37px;
+        left: -60px;
+    }
+
+    .heroText {
+        font-size: 1em;
+    }
+
+    .popular {
+        height: auto;
+    }
+
+    .card {
+        flex-flow: column wrap;
+    }
+
+    .card .foodCard {
+        width: 80%;
+        margin-bottom: 50px;
+
+        &:last-child {
+            margin-bottom: 0px;
+        }
+    }
+
+    .statBlock {
+        flex-flow: column wrap;
+        margin: 0px;
+    }
+
+    .statBlock .statItem {
+        width: 10em;
+        height: 10em;
+        margin-bottom: 50px;
+    }
+
+    .statBlock .statItem .statNum {
+        font-size: 3em;
+    }
+
+    .menuInner {
+        flex-flow: column wrap;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .menuInner .menuCard {
+        width: 90%;
+        flex-flow: column wrap;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 50px;
+        padding-right: 0;
+    }
+
+    .menuInner .menuCard .menuDesc .menuTitle {
+        text-align: center;
+        font-size: 3em;
+        margin-top: 50px;
+    }
+
+    .menuInner .menuCard .menuDesc .menuText {
+        font-size: 1.3em;
+    }
+
+    .descSec {
+        font-size: 2.5em;
+    }
+
+    .offer .offer__item .offerText h3 {
+        font-size: 3em;
+    }
+
+    .offer .offer__item .offerText h3:before {
+        left: -25px;
+        top: -35px;
+    }
+
+    .packageMenuCard {
+        width: 90%;
+        display: flex;
+        flex-flow: column wrap;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .packageMenu {
+        height: auto;
+    }
+
+    .packageMenuCard .menuCard {
+        padding: 80px 10px;
+        flex-flow: column wrap;
+        align-items: center;
+        width: 50%;
+        margin-bottom: 50px;
+    }
+
+    .packageMenuCard .menuCard .menuBtn {
+        font-size: 25px;
+    }
+
+    .packageMenuCard .menuCard .menuTitle {
+        font-size: 2em;
+    }
+
+    .packageMenuCard .menuCard .menuText {
+        font-size: 1.5em;
+    }
+
+    .formEmail .btnSub {
+        width: 22%;
+        left: -5%;
+    }
+
+    .aboutFooter .footerItem .aboutUs p {
+        font-size: smaller;
+    }
+}
+
+@media (max-width: 425px) {
+    .scrollTop {
+        bottom: 5px;
+        right: 5px;
+    }
+
+    .logo {
+        margin: 25px 0px 10px;
+        order: 2;
+    }
+
+    nav {
+        font-size: 0.8em;
+        order: 1;
+        display: flex;
+        flex-flow: column-reverse wrap;
+        align-items: center;
+
+        .navInner {
+            a {
+                display: none;
+                margin: 0;
+                margin-bottom: 10px;
+                font-size: 3em;
+            }
+
+        }
+    }
+
+    .hero .heroTitle {
+        font-size: 4em;
+        order: 3;
+
+        &:before {
+            top: -22px;
+            left: -35px;
+        }
+    }
+
+    .heroText {
+        font-size: 1.5em;
+        order: 4;
+    }
+
+    .heroBtn {
+        order: 5;
+    }
+
+    .statistic {
+        min-height: 900px;
+    }
+
+    .statistic:after {
+        min-height: 900px;
+    }
+
+    .statBlock {
+        flex-flow: row wrap;
+        margin-top: 100px;
+    }
+
+    .statistic h3 {
+        font-size: 2em;
+    }
+
+    .statistic h3:before {
+        content: "Statistic";
+        left: 25px;
+        top: -25px;
+    }
+
+    h3 {
+        font-size: 3em;
+    }
+
+    h3:before {
+        content: "Popular";
+        position: absolute;
+        top: -35px;
+        left: -35px;
+        font-size: 2em;
+        opacity: 0.1;
+        z-index: -1;
+    }
+
+    .ourMenu h3 {
+        font-size: 4em;
+    }
+
+    .offer .offer__item .offerText h3 {
+        font-size: 2em;
+    }
+
+    .offer .offer__item .offerText h3:before {
+        left: -20px;
+        top: -20px;
+    }
+
+    .descSec {
+        font-size: 2.5em;
+    }
+
+    .offer .offer__item .offerImg {
+        display: none;
+    }
+
+    .titleSec {
+        .descSec {
+            font-size: 1.5em;
+            width: 100%;
+            margin: 0px;
+        }
+    }
+
+    .offer .offer__item .btnOffer {
+        font-size: .9em;
+        width: 70%;
+    }
+
+    .packageMenu .packageMenu__item h3 {
+        font-size: 2em;
+    }
+
+    .packageMenu .packageMenu__item h3:before {
+        left: 30px;
+        top: -20px;
+    }
+
+    .packageMenuCard .menuCard {
+        padding: 20px 10px;
+        flex-flow: column wrap;
+        align-items: center;
+        width: 70%;
+        margin-bottom: 50px;
+        border-radius: 50px;
+    }
+
+    .offer .offer__item .offerText {
+        width: 100%;
+    }
+
+    .packageMenuCard .menuCard .menuBtn {
+        font-size: 20px;
+    }
+
+    .packageMenuCard .menuCard .menuTitle {
+        font-size: 1.5em;
+    }
+
+    .chef .chef__item h3 {
+        font-size: 3em;
+    }
+
+    .chef .chef__item .imgChef {
+        margin: 150px 0px 30px;
+    }
+
+    .chef .chef__item h3:before {
+        left: 80px;
+    }
+
+    .subscribe .subscribeInner h3 {
+        font-size: 3em;
+    }
+
+    .subscribe .subscribeInner h3:before {
+        left: -80px;
+    }
+
+    .formEmail {
+        text-align: center;
+        display: flex;
+        flex-flow: column wrap;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .formEmail .btnSub {
+        width: 50%;
+        left: 0;
+    }
+
+    .formEmail .email {
+        width: 70%;
+        margin-bottom: 20px;
+    }
+
+    .footer {
+        height: auto;
+    }
+
+    .aboutFooter {
+        font-size: larger;
+    }
+
+    .aboutFooter .footerItem {
+        margin: 0 auto;
+        width: 90%;
+        display: flex;
+        flex-flow: column wrap;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .aboutFooter .footerItem .aboutUs {
+        width: 90%;
+        margin: 0px;
+        padding: 0px;
+    }
+
+    .aboutFooter .footerItem .about {
+        width: 90%;
+    }
+
+    .aboutFooter .footerItem .services {
+        width: 90%;
+    }
+
+    .aboutFooter .footerItem .follow {
+        width: 90%;
+    }
+}
+
+@media (max-width: 320px) {
+    .hero .heroTitle {
+        font-size: 3em;
+    }
+
+    .hero .heroTitle:before {
+        top: -10px;
+        left: -25px;
+    }
+
+    .heroText {
+        font-size: 1em;
+    }
+
+    .heroBtn,
+    button {
+        font-size: 1em;
+        margin: 30px 0px;
+    }
+
+    .imgCard {
+        img {
+            width: 90%;
+        }
+    }
+
+    .descSec {
+        font-size: 1.5em;
+    }
+
+    .statistic h3 {
+        font-size: 2em;
+    }
+
+    .statBlock {
+        margin-top: 0px;
+    }
+
+    .statistic h3:before {
+        left: 10px;
+        top: -15px;
+    }
+
+    .ourMenu h3 {
+        font-size: 3em;
+    }
+
+    .menuInner .menuCard .menuDesc .menuText {
+        font-size: 1.1em;
+    }
+
+    .offer .offer__item .btnOffer {
+        font-size: 0.5em;
+        width: 70%;
+    }
+
+    .packageMenuCard .menuCard .menuTitle {
+        font-size: 1.3em;
+    }
+
+    .packageMenuCard .menuCard .menuBtn {
+        font-size: 10px;
+    }
+
+    .chef .chef__item h3:before {
+        left: 50px;
+    }
+
+    .imgChef {
+        text-align: center;
+
+        img {
+            width: 80%;
+        }
+    }
+}
